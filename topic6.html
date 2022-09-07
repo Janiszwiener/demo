@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+  <nav>
+    <ul>
+
+      <li><a href="home.html">Home</a></li>
+
+      <li><a  href="topic1.html">Vorlesung 1</a>
+      <ul>
+        <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+        <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+        <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+        <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic2.html">Vorlesung 2</a>
+          <ul>
+            <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+            <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+            <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+          </ul>
+      </li>
+
+      <li><a href="topic3.html">Vorlesung 3</a>
+      <ul>
+        <li><a href="topic3.html#subtopic1">Einführung</a></li>
+        <li><a href="topic3.html#subtopic2">Threads</a></li>
+        <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic4.html">Vorlesung 4</a>
+      <ul>
+        <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+        <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+        <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+        <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic5.html">Vorlesung 5</a>
+      <ul>
+        <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+        <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+        <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+      </ul>
+      </li>
+
+      <li><a class="active" href="topic6.html">Vorlesung 6</a>
+      <ul>
+        <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+        <li><a href="topic6.html#subtopic2">PWA</a></li>
+        <li><a href="topic6.html#subtopic3">React</a></li>
+        <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+        <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+        <li><a href="topic6.html#subtopic6">Promises </a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+      <ul>
+        <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+
+<div class="row">
+
+
+
+<div class="content">
+  <div class="column middle">
+    <div class="card">
+    <h2>Vorlesung 6</h2>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Apps!!!</a></h3>
+    <p>
+
+
+  In dieser letzten Lektion haben wir uns mit Anwendungen beschäftigt.
+  Vor 2007 bezog sich dieser Begriff auf dynamische browserbasierte Webanwendungen. Seit 2007 werden native Anwendungen verwendet.
+  Auf Android laufen diese auf Java und auf iOS seit 2014 auf Swift.
+</p>
+    <p>
+  Das Problem bei nativen Anwendungen ist, dass sie sehr komplex und plattformspezifisch sind.
+  Seit 2010 werden auch hybride Anwendungen eingesetzt.
+  Dies ist ein Framework für die Entwicklung einer Anwendung, die auf iOS und Android funktioniert.
+  Auch hybride Anwendungen sind komplex.
+  Außerdem haben sie das Problem,
+  dass sie nur für Mobiltelefone geeignet sind und daher eine zusätzliche Desktop-Webanwendung erforderlich sein kann.
+</p>
+    <p>
+  Die neueste Form der App wurde 2015 entwickelt und wird als progressive Web-App bezeichnet.
+  Im Grunde handelt es sich um eine Website die aussieht wie eine native App und auch über fast alle Funktionen einer App verfügt.
+  Beispiele für solche Anwendungen sind die Websites von Facebook und Netflix.
+
+
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic2">Progressive Webanwendungen:</a></h3>
+    <p>
+      Progressive Webanwendungen funktionieren mit Hilfe von JavaScript-Code, der im Hintergrund läuft.
+      Ein Proxy kümmert sich um die Kommunikation zwischen der PWA und dem Webserver.
+
+      <p>
+          <img src="PWA.png" alt="Trulli" width="350" height="250" class="center">
+
+      </p>
+      Die Web-App verfügt über einen eigenen Cache und kann somit bei jeder eingehenden Anfrage einer PWA entscheiden,
+      ob diese aus dem Cache beantwortet werden kann oder ob eine aktive Internetverbindung erforderlich ist.
+      Darüber hinaus werden Push-Benachrichtigungen, Offline-Nutzung und Hintergrundaktualisierungen ermöglicht.
+    </p>
+    <p>
+      Innerhalb von Progressiven Web Apps wird noch in Single und Multi Page Application unterschieden.
+      Single Page Applications bestehen aus einer HTML Seite und rendern ihren Content direkt über JavaScript.
+      Bei Multi Page Applications handelt es sich um mehrere HTML Seiten, die vom Server gerendert werden.
+    </p>
+    </div>
+
+
+    <div class="card">
+    <h4><a id="subtopic3"></a></h4>
+    <p>
+        <img src="react-js.png" alt="Trulli" width="550" height="150" class="center">
+
+    </p>
+    <p>
+        React ist eine JavaScript-Softwarebibliothek, die ein Grundgerüst für die Ausgabe von User-Interface-Komponenten von Webseiten zur Verfügung stellt.
+        Komponenten werden in React hierarchisch aufgebaut und können in dessen Syntax als selbst definierte JSX-Tags repräsentiert werden.
+        Für React Apps werden zusätzliche Libraries benötigt, wie Redux oder React Router.
+        React basiert auf Komponenten, z.B.:
+        <ol>
+            <li>   Header </li>
+            <li>   Sidebar </li>
+            <li>   Headline </li>
+            <li>   Content</li>
+        </li>
+      </ol>
+        Der Vorteil daran ist, dass die Komponenten bereits fertig designed sind und wieder verwendet werden können.
+        Dadurch müssen Änderungen nur an den einzelnen Komponenten vorgenommen werden und man hat eine bessere Übersicht über den Code.
+
+      </p>
+
+      <h4>Node.js:</h4>
+      <p>
+        Bei Node.js handelt es sich um eine Laufzeitumgebung für JavaScript.
+        Mit Hilfe von Node.js kann JavaScript auf jeder Plattform und ohne Browser laufen.
+        Zudem kann damit JavaScript zur serverseitigen Programmierung eingesetzt werden.
+      </p>
+
+      <h4>Express.js</h4>
+      <p>
+        Express.js ist ein Node.js-Framework von Webanwendungen,
+        das zahlreiche leistungsfähige Features und Funktionen für Webanwendungen und mobile Anwendungen bereitstellt.
+        Mithilfe unzähliger HTTP-Dienstprogrammmethoden und Middlewarefunktionen gestaltet sich das Erstellen einer leistungsfähigen API schnell und einfach.
+        Express bietet eine Thin-Layer-Ebene mit grundlegenden Webanwendungsfunktionen, ohne die bekannten Node.js-Features zu überlagern
+      </p>
+
+    </div>
+    <div class="card">
+    <h3><a id="subtopic4"></a></h3>
+    <p>
+        <img src="Javascript.png" alt="Trulli" width="550" height="160" class="center">
+
+    </p>
+      <p>
+      Im Anschluss haben wir uns mit JavaScript beschäftigt.
+      Hier eine Übersicht der wichtigsten Grundbegriffe und Befehle die wir auch schon aus anderen Programmiersprachen kennen:
+      </p>
+      <table border="1" class="center" >
+    <tr>
+      <th> Datentypen:</th>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>Inhalt</td>
+    </tr>
+    <tr>
+      <td>Number</td>
+      <td>Ganz-/Fließkommazahlen</td>
+    </tr>
+    <tr>
+      <td>Strings</td>
+      <td>Texte</td>
+    </tr>
+    <tr>
+      <td>Boolean</td>
+      <td>True & False Statements</td>
+    </tr>
+    <tr>
+      <td>Array</td>
+      <td>Variablen, die mehrere Werte speichern</td>
+    </tr>
+    <tr>
+      <td>Objekte</td>
+      <td>Speichern Daten und Eigenschaften</td>
+    </tr>
+    <tr>
+      <td>NULL</td>
+      <td>Variable ohne Wert</td>
+    </tr>
+    <tr>
+      <td>Undefined</td>
+      <td>Variable ohne zugewiesenen Wert</td>
+    </tr>
+  </table>
+
+    <table border="1" class="center">
+      <tr>
+        <th>Operatoren</th>
+      </tr>
+    <tr>
+      <td>Name</td>
+      <td>Formel</td>
+    </tr>
+    <tr>
+      <td>Addition</td>
+      <td>var x = 3+4;</td>
+    </tr>
+    <tr>
+      <td>Subtraktion</td>
+      <td>var x = 5-2;</td>
+    </tr>
+    <tr>
+      <td>Multiplikation</td>
+      <td>var x = 2*3;</td>
+    </tr>
+    <tr>
+      <td>Division</td>
+      <td>var x = 6/2;</td>
+    </tr>
+    <tr>
+      <td>Modulo</td>
+      <td>var x = 7%2;</td>
+    </tr>
+    <tr>
+      <td>Wertevergleich</td>
+      <td>a == b;</td>
+    </tr>
+    <tr>
+      <td>Werte- und Typvergleich</td>
+      <td>a === b;</td>
+    </tr>
+    <tr>
+      <td>Ungleicher Wert	</td>
+      <td>a!=b;</td>
+    </tr>
+    <tr>
+      <td>Ungleicher Wert und Typ</td>
+      <td>a !== b;</td>
+    </tr>
+    <tr>
+      <td>Größer bzw Größer-gleich</td>
+      <td>a>b bzw. a>=b</td>
+    </tr>
+    <tr>
+      <td>Kleiner bzw Kleiner-gleich</td>
+      <td> a<b bzw.a<=b  </td>
+    </tr>
+    <tr>
+      <td>Ternary</td>
+      <td> a?b </td>
+    </tr>
+
+        <table border="1">
+    <tr>
+      <th>Variablen:</th>
+    </tr>
+    <tr>
+      <td>Var:</td>
+      <td>
+        Meistgenutzte Varibale; kann neu zugewiesen,
+        aber nur innerhalb einer Funktion aufgerufen werden;
+        mit var definierte Variablen werden bei der Ausführung des Codes an den Anfang gestellt.
+      </td>
+    </tr>
+    <tr>
+      <td>Const:</td>
+      <td>
+        Kann nicht neu zugewiesen werden und sind nicht zugänglich,
+        bevor sie im Code erscheinen
+      </td>
+    </tr>
+    <tr>
+      <td>Let:</td>
+      <td>
+        Vergleichbar mit const, können jedoch neu zugewiesen, aber nicht neu deklariert werden
+      </td>
+    </tr>
+
+  </table>
+
+      <p>
+        <h4> Objekte: </h4>
+        Objekte sind Behälter für logisch zusammen gehörende Variablen und Funktionen,
+        die als Eigenschaften und Methoden des Objekts bezeichnet werden.
+        Ein Javascript Object organisiert Daten,
+        kapselt Daten und Logik nach außen ab und bietet eine einfache Schnittstelle zu seinen Elementen über seinen Namen.
+
+        <h4> Bedingungen: </h4>
+        Bedingungen in Programmiersprachen erlauben es, bestimmte Fälle abzuprüfen,
+        z. B. ob eine Variable einen bestimmten Wert hat.
+        JavaScript bietet, wie in vielen anderen Sprachen auch, zwei Möglichkeiten:
+        if (einfache Verzweigung) und switch - case (mehrfache Verzweigung).
+
+        <h4> Funktionen: </h4>
+        Funktionen sind ein Grundbaustein in JavaScript.
+        Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen,
+        um eine Aufgabe auszuführen oder eine Wert auszurechnen.
+        Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.
+
+        <h4> Pure Functions: </h4>
+          Funktionen, die einen Wert zurückliefern,
+          der nur aus den Parametern entsteht.
+
+        <h4> Higher-Order-Functions - HOC:</h4>
+        Funktionen, welche andere Funktionen verändern können.
+
+        <h4> Klassen: </h4>
+        Eine JavaScript-Klasse ist eine Art von Funktion.
+        Klassen werden mit dem Schlüsselwort class deklariert.
+        Wir werden die Syntax von Funktionsausdrücken verwenden, um eine Funktion zu initialisieren,
+        und die Syntax von Klassenausdrücken, um eine Klasse zu initialisieren.
+
+        <h4> Bind: </h4>
+        Sollen Klassenfunktionen weitergegeben werden,
+        muss bei der normalen Deklaration von Funktionen vor der Übergabe ein bind ausgeführt werden.
+        bind wird bei der Verwendung von Pfeilfunktionen in Klassen nicht benötigt,
+        da für diese Funktionen automatisch ein bind ausgeführt wird.
+        bind sorgt dafür, das Funktionen this verwenden können.
+        <h4> Object Destructuring: </h4>
+        Wird genutzt, um einzelne Werte und Eigenschaften von Arrays oder Objekten herauszulösen.
+
+        <h4> Object Literal Enhancement: </h4>
+        Gegenstück zum Destructuring. Es wird ein Objekt wieder zusammengesetzt.
+
+        <h4> Spread Operator: </h4>
+        Zwei Arrays können in ein Drittes kombiniert werden.
+        Der Spread Operator erzeugt dafür eine lokale Kopie,
+        sodass die originalen Daten nicht beeinflusst werden.
+
+      </p>
+
+
+
+    </div>
+
+
+
+
+    <div class="card">
+    <h3><a id="subtopic5">Asynchrone Programmierung:</a></h3>
+      <p>
+      Die Programme, die wir bisher angesehen haben den Prozessor beschäftigt,
+      bis die zu erledigende Arbeit abgeschlossen ist.
+      Viele Programme nutzen jedoch auch Dinge außerhalb des Prozessors ausführen,
+      indem sie etwa über ein Netzwerk kommunizieren oder Daten von einer Festplatte anfordern.
+      In solchen Fällen soll der Prozessor nicht einfach im Leerlauf gelassen werden.
+    </p>
+    <p>
+        <img src="asynchron.jpeg" alt="Trulli" width="550" height="310" class="center">
+
+    </p>
+      <p>
+        In einem synchronen Programmiermodell geschieht immer eins nach dem anderen. Solange also eine Aktion läuft kann das Programm nicht weitermachen.
+        Beim asynchronen Modell können im Gegensatz dazu mehrere Dinge gleichzeitig geschehen.
+        Bei Beginn einer Aktion kann das Programm parallel mit etwas anderem weitermachen.
+        Sobald die Aktion abgeschlossen ist, wird das Programm darüber informiert und erhält Zugriff auf das Ergebnis.
+      </p>
+      <p>
+        Möchte man nun zwei Ressourcen aus dem Netzwerk abrufen und die Ergebnisse kombinieren, funktioniert dies in einer synchronen Umgebung,
+        indem man eine Anforderung nach der anderen ausführt. Dabei kann die zweite Anforderung erst dann gestartet werden, wenn die erste abgeschlossen ist.
+        Die erforderliche Zeit beträgt dann mindestens die Summe der beiden Antwortzeiten.
+        In einem synchronen System werden zusätzliche Threads verwendet.Dabei kann jeweils auf einem Prozessor ein eigener Thread ausgeführt werden.
+        Im zweiten Thread kann bereits die zweite Anforderung begonnen werden. Beide Threads warten dann auf den Eingang der Ergebnisse.
+        Anschließend werden sie resynchronisiert, um ihre Ergebnisse zu kombinieren. Im Diagramm sieht dies dann folgendermaßen aus:
+      </p>
+        <p>
+          Im synchronen Modell wird also implizit auf den Abschluss von Aktionen gewartet,
+          im asynchronen dagegen explizit.
+        </p>
+
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic6">Promises:</a></h3>
+      <p>
+        Ein Promise ist eine asynchrone Aktion, die irgendwann abgeschlossen sein kann und dann einen Wert produziert. Sobald dieser zur Verfügung steht, kann das Promise jeden darüber benachrichtigen, der daran interessiert ist.
+        Die einfachste Art einen solchen Promise zu erstellen,
+        ist der Aufruf von Promise.resolve.
+        Die Funktion schließt den Wert, der übergeben wird in ein Promise ein.
+        Handelt es sich dabei bereits um ein Promise, wird es einfach zurückgegeben.
+        Andernfalls erhölt man ein neues Promise, das sofort mit dem zurückgegebenen Wert als Ergebnis abgeschlosse wird.
+    </p>
+    <p>
+      Promise ist eine asynchrone Aktion, welche in der Zukunft abgeschlossen sein wird und ein Ergebnis zurückliefert.
+      Promise kann jeden über das Ergebnis informieren, der daran interessiert ist.
+    </p>
+    <p>
+      Man kann sich ein Promise als ein Gerät vorstellen, das Werte in eine asynchrone Realität verschiebt.
+      Ein normaler Wert ist einfach vorhanden.
+      Ein versprochener Wert dagegen kann bereits vorhanden sein oder irgendwann in der Zukunft erscheinen.
+      Berechnungen an in Promises eingeschlossenen Werten werden asynchron ausgeführt, sobald die Werte zur Verfügung stehen.
+    </p>
+        <p>
+      Zum Erstellen eines Promises kann man Promise als Konstruktor verwenden.
+      Dieser erwartet eine Funktion als Argument,
+      die er sofort aufruft und an die er eine Funktionübergibt, die sie nutzen kann, um das Promise aufzulösen.
+    </p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="column right">
+  </div>
+
+</div>
+
+
+
+</div>
+<div class="footer">
+  <p>2022</p>
+</div>
+<script src="Scriptsheet.js">
+
+</script>
+</body>
+</html>

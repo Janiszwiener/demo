@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+  <nav>
+    <ul>
+
+      <li><a href="home.html">Home</a></li>
+
+      <li><a  href="topic1.html">Vorlesung 1</a>
+      <ul>
+        <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+        <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+        <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+        <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic2.html">Vorlesung 2</a>
+          <ul>
+            <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+            <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+            <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+          </ul>
+      </li>
+
+      <li><a href="topic3.html">Vorlesung 3</a>
+      <ul>
+        <li><a href="topic3.html#subtopic1">Einführung</a></li>
+        <li><a href="topic3.html#subtopic2">Threads</a></li>
+        <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+      </ul>
+      </li>
+
+      <li><a class="active" href="topic4.html">Vorlesung 4</a>
+      <ul>
+        <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+        <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+        <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+        <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic5.html">Vorlesung 5</a>
+      <ul>
+        <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+        <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+        <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic6.html">Vorlesung 6</a>
+      <ul>
+        <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+        <li><a href="topic6.html#subtopic2">PWA</a></li>
+        <li><a href="topic6.html#subtopic3">React</a></li>
+        <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+        <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+        <li><a href="topic6.html#subtopic6">Promises </a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+      <ul>
+        <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+
+
+
+
+<div class="content">
+  <div class="column middle">
+    <div class="card">
+    <h2>Vorlesung 4</h2>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Thread Scheduler</a></h3>
+    <p>
+      Ein Thread Scheduler ist dafür verantwortlich, welcher Thread vom Zustand lauffähig in den Zustand laufend versetzt wird.
+      Leider lässt sich der Scheduler nicht kontrollieren, daher sollte man sich nicht auf ihn verlassen.
+    </p>
+    <p>
+      Das Verhalten des Scheduler ist nicht vorhersehbar oder kalkulierbar. Daher sollte ein Programm nicht auf ein bestimmtes Verhalten abzielen.
+      Um dieses Problem ansatzweise zu umgehen, können Threads für einen Zeitraum in den Zustand blockiert versetzt werden.
+    </p>
+    <p>
+        <img src="Thread-Scheduler-in-java.png" alt="Trulli" width="600" height="300" class="center">
+    </p>
+
+    <p>
+      Dieser Zustand wird auch als Schlafen bezeichnet. Der Thread kann erst wieder laufen, wenn die blockierte Zeit abgelaufen ist.
+      Da man jedoch immernoch nicht den genauen Algorithmus kennt, ist der Scheduler auch mit dieser Methode nicht zu 100% kontrollierbar.
+    </p>
+    <p>
+      Im Rahmen der Vorlesung haben wir dazu eine Übung gemacht, in der wir zwei Threads kreiert haben und uns deren Verhalten angeschaut haben.
+      Der dazugehörige Code sieht folgendermaßen aus:
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic2"> Nebenläufigkeitsprobleme </a></h3>
+
+      <p>
+          <img src="threads.png" alt="Trulli" width="490" height="300" class="center" >
+      </p>
+      <ul>
+          <li> Bei Threads können Nebenläufigkeitsprobleme auftreten, die zu Konkurrenzsituationen führen.
+              Sie treten auf, wenn zwei oder mehr Threads mit denselben Heap-Objekten arbeiten und können im schlimmsten Fall zu Datenbeschädigungen führen.</li>
+          <li>  Da Threads unabhängig voneinander arbeiten, weiß ein Thread nicht, was der andere gerade tut, und führt die Aktionen seines Threads ohne zu zögern aus, sobald er den laufenden Zustand erreicht.</li>
+          <li>  Auch ein Thread selbst weiß nicht, ob er zwischen verschiedenen Anweisungen für kurze Zeit nicht blockiert war und ob sich in der Zwischenzeit Daten geändert haben.</li>
+      </ul>
+
+
+
+    </p>
+    </div>
+  </div>
+
+  <div class="card">
+  <h3><a id="subtopic3"> Verlorene Aktualisierung </a></h3>
+  <p>
+    Anschließend haben wir uns mit dem „Problem des verlorenen Updates“ beschäftigt.
+    Dies stellt eine Sonderform der bereits diskutierten Kontingenzprobleme dar.
+    Das Problem tritt auf, wenn Änderungen an Objekten nicht atomar sind, sondern stufenweise erfolgen.
+    Bei nur einer Anweisung in einer Methode tritt dieser Fall nicht auf.
+  </p>
+      <p>
+    Das Beispiel aus der Vorlesung war eine Variable, die inkrementiert werden sollte,
+    indem sie zuerst in einer lokalen Variable zwischengespeichert und diese Variable dann der ursprünglichen Variable als Wert +1 zugewiesen wurde.
+  </p>
+  <p>
+Im Code sieht das so aus:
+<code><pre>
+public void increment(){
+int i = konstanter Status;
+Kontostand = i +1;
+}
+</code></pre>
+Wenn nun zwei (oder mehr) Threads versuchen, das Gleichgewicht zu erhöhen, können Probleme auftreten, wenn einer von Running zu Runnable zurückkehrt, bevor die Methode abgeschlossen ist.
+Das Schlüsselwort ist auch die Lösung für dieses Problem.
+Aber auch für dieses Problem ist das Stichwort dubbed die Lösung.
+Wenn Sie in diesem Beispiel die Methode als einzelne Entität deklarieren, kann Thread A nicht auf die Methode zugreifen, wenn B schläft und noch nicht fertig ist.
+
+Die Methode sieht dann so aus:
+</p>
+  <p>
+    <code><pre>
+öffentliches synchrones Void-Inkrement () {
+int i = konstantand;
+konstant = i +1;
+}
+</code></pre>
+</p>
+<p>
+Ein weiteres Problem beim Multithreading sind sogenannte Deadlocks.
+<p>
+    <img src="deadlock.png" alt="Trulli" width="490" height="270" class="center" >
+</p>
+<p>
+Dies ist eine gegenseitige Blockierung von synchronisierten Methoden.
+Dies kann passieren, wenn zwei Threads den Schlüssel haben, den der andere haben möchte.
+Die Threads warten dann darauf, dass der gewünschte Schlüssel freigegeben wird, ohne ihren eigenen freizugeben.
+Hier nocheinmal ein veranschaulichtes Szenario:
+</p>
+<p>
+    <img src="deadlock2.jpeg" alt="Trulli" width="690" height="400" class="center" >
+</p>
+<p>
+Beachten Sie, dass die Sperre keine Sperre für die Methode ist, sondern für das Objekt, auf das die Methode verweist.
+Wenn das Objekt über mehrere synchronisierte Methoden verfügt, können zwei Threads nicht gleichzeitig in eine der Methoden eintreten.
+Das Schlüsselwort im Code sperrt also nicht die Daten selbst, sondern synchronisiert nur die Methoden, die auf die Daten zugreifen.
+</p>
+<p>
+Leider hat Java im Gegensatz zu Datenbanken keine Handhabung für Deadlocks wie Transaktions-Rollbacks, sondern die Methoden warten einfach ewig.
+Java bemerkt nicht einmal, dass ein Deadlock aufgetreten ist.
+  </p>
+  </div>
+
+
+  <div class="card">
+  <h3><a id="subtopic4">Erzeuger/Verbraucher-Problem:</a></h3>
+  <p>
+
+Das letzte Problem mit Threads, das wir uns im Laufe der Vorlesung angesehen haben, war das Producer/Consumer-Problem.
+Dies tritt auf, wenn zwei oder mehr Threads Daten über einen Pufferspeicher austauschen.
+<p>
+    <img src="procon.png" alt="Trulli" width="690" height="250" class="center" >
+</p>
+
+
+Es kann vorkommen, dass ein Verbraucher bereits versucht, auf neue Daten zuzugreifen, obwohl diese noch nicht vorhanden sind oder nur ältere Werte haben.
+Auch dies führt zu verfälschten oder unvollständigen Daten.
+Im Rahmen des Vortrags haben wir uns mit einer möglichen Lösung mittels „Thread-Kommunikation“ beschäftigt.
+Dadurch können die Threads "vorziehen" (mit der Methode join() oder join(ling mullis)),
+um aufeinander zu warten (mit der Methode wait() oder wait(long timeout)) oder um andere Threads zu benachrichtigen, wenn sie ihre Ausführung beendet haben (mit der Methode translate() oder NotifyAll()).
+  </div>
+
+</div>
+
+
+  <div class="column right">
+  </div>
+
+</div>
+
+
+
+</div>
+<div class="footer">
+  <p>2022</p>
+</div>
+<script src="Scriptsheet.js">
+
+</script>
+</body>
+</html>

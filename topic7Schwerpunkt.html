@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+  <nav>
+    <ul>
+
+      <li><a href="home.html">Home</a></li>
+
+      <li><a href="topic1.html">Vorlesung 1</a>
+      <ul>
+        <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+        <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+        <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+        <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic2.html">Vorlesung 2</a>
+          <ul>
+            <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+            <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+            <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+          </ul>
+      </li>
+
+      <li><a href="topic3.html">Vorlesung 3</a>
+      <ul>
+        <li><a href="topic3.html#subtopic1">Einführung</a></li>
+        <li><a href="topic3.html#subtopic2">Threads</a></li>
+        <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic4.html">Vorlesung 4</a>
+      <ul>
+        <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+        <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+        <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+        <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic5.html">Vorlesung 5</a>
+      <ul>
+        <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+        <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+        <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic6.html">Vorlesung 6</a>
+      <ul>
+        <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+        <li><a href="topic6.html#subtopic2">PWA</a></li>
+        <li><a href="topic6.html#subtopic3">React</a></li>
+        <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+        <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+        <li><a href="topic6.html#subtopic6">Promises </a></li>
+      </ul>
+      </li>
+
+      <li><a class="active" href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+      <ul>
+        <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+
+<div class="row">
+
+
+
+<div class="content">
+  <div class="column middle">
+    <div class="card">
+    <h2>Schwerpunktthema - ASP:NET - Continous Deployment via DevOps Pipelines </h2>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Webapps statt normaler Software?</a></h3>
+    <p>
+      Wir wissen dank dieser Vorlesung bereits was WebApps sind. Denoch sollen hier noch einmal ihre Vorteile erläutert sein:
+
+      Sie funktionieren auf allen Betriebssystemen und internetfähigen bzw. mit einem Webbrowser ausgestatteten Endgeräten
+
+      Sie haben eine effiziente und im Vergleich zu Nativen Apps oft günstigere Programmierung
+
+      Software-Upgrades sind einfacher, da sich der Entwickler nicht mit den verschiedenen Betriebssystemen seiner User beschäftigen muss.
+      </p>
+      <p>
+      Der Nachteil von Web-Apps ist natürlich, dass die Bereitstellung, Verarbeitung und Auswertung der Daten auf einem Webserver bzw. in der Cloud erfolgen muss.
+      Für das Hosting und Simulieren von Servern wurden in der Vorlesung viele Beispiele genannt.
+      Ein Beispiel war der selfhosted Tomcat Server.
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic2">Progressives Deployment </a></h3>
+    <p>
+      <h4> Was ist eigentlich das Problem mit ganz normalem Deployment? </h4>
+
+        Als wir in der fünften Vorlesung einen TomCat-Server gehostet haben sind wir schon in Kontakt mit der grundlegenden Idee von Deployment gekommen.
+
+        Wir hatten einen "Enwticklungsumgebungsordner" und einen "DeploymentOrdner"
+
+        Wollte man jetzt eine Änderung im Quellcode vornehmen (bzw. ein Update machen) so musste die Java-Datei kompiliert werden und die Class-Datei überkopiert werden.
+        Bei diesem Schritt kam es oft zu Schwierigkeiten und auch wenn es nach ein paar Versuchen gut funktioniert hat,
+        wird schnell klar, dass dies keine sichere, transparente und flexible Methode für international agierende Development Teams sein kann.
+
+
+        </p>
+
+    <p>
+      Hiermit wird eine weitere Methode vorgestellt, die mittlerweile klassischerweise von vielen Development Teams eingesetzt wird.
+
+      Diese versucht die Vorteile von 3 Haupttechnologien zu kombinieren:
+
+        </p>
+        <p>
+<ol>
+    <li>   Flexible Cloud Repositorien </li>
+    <li>   Pipelines für continuous Deployment </li>
+    <li>   Skalierte Container </li>
+</li>
+</ol>
+</p>
+      <p>
+
+      In unserem Beispiel nutzen wir das Azure DevOps Environment.
+      Zur Simplifizierung wird die Möglichkeit der Container Nutzung nur in der Theorie erläutert;
+      Außerdem bietet Azure DevOps eine simple und direkte Unterstützung für das Pushen von Windows ASP.NET-Apps an, welche ohne die Verwendung von Containern auskommt und direkt von MS.Azure Gehosted wird.
+
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic3">3 Komponenten</a></h3>
+    <p>
+      <h4> 1: Flexible Cloud Repositorien </h4>
+
+      Ein Code-Repository ist ein Archiv des Codes selbst, an dem gearbeitet wird. Neben dem Code können auch Dinge wie Dokumentation, Notizen, Webseiten und andere Elemente in einem Repository aufbewahrt werden.
+      Damit mehrere Teams gleichzeitig darauf zugreifen können bietet es sich selbstverständlich an, das Repository in der Cloud zu haben.
+
+      Bekanntes Beispiel für ein solche Programme sind GitHub und GitLab. Aber Team-Entwicklungsumgebungen wie Azure-DevOps bieten auch integrierte Repos, welche wir im folgenden Beispiel nutzen werden.
+
+      <h4>  2. Pipelines für continuous Deployment </h4>
+
+      Eine Pipeline ist eine Reihe von automatisierten Prozessen, die es uns ermöglichen, Code zuverlässig zu kompilieren, zu erstellen und auf den Produktions-Rechenplattformen einzusetzen.
+
+      Die allgemeine Architektur der Pipeline sollte aus folgenden Elementen bestehen:
+      1. Eine Build- und Testphase
+      2. Eine Freigabephase, in der die Anwendung in einer Staging-Umgebung freigegeben wird
+
+      Der Code soll den Repositorien entnommen und in Containern deployed werden.
+      <div >
+
+          <img src="looool222.png" alt="Docker3" width="900" height="400" class="center">
+
+      </div>
+
+
+      <h4> 3: Skalierte Container </h4>
+
+      Eine schnelle Bereitstellung ist der Schlüssel für Geschäftsflexibilität. Moderne Unternehmen müssen in der Lage sein, Apps schnell freizugeben, um im Geschäft zu bleiben und neue Kunden anzuziehen. Containerisierung spart Zeit und verringert Kosten. Sie müssen keine Hardware konfigurieren und Zeit damit verbringen, Betriebssysteme und Software zu installieren, um eine Bereitstellung zu hosten. Mehrere Apps können in isolierten Containern auf derselben Hardware (bzw. der Cloud) ausgeführt werden.
+      Es ist möglich, eine schnelle horizontale Hochskalierung zu erreichen, indem weitere Containerinstanzen gestartet werden. Das Management der verschiedenen Container heißt übrigens Orchestriesierung:
+      <div >
+
+          <img src="Unbenannt6.png" alt="Docker3" width="800" height="500" class="center">
+
+      </div>
+      Die mit Abstand am häufigsten verwendete Plattform zur Containerisierung ist Docker. Hierzu gibt es auch ein <a href="https://www.youtube.com/watch?v=dnfzBtzCDfY&t=1s" target="_blank" >hervorragendes Video </a> welches von Henry, Sinoe, Paul und mir erstellt wurde.
+      <div class="PhilCollins" >
+          <img src="Unbenannt7.png" alt="Docker" >
+      </div>
+
+
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic4">Beispiel: DevOps Pipeline </a></h3>
+    <p>
+      Wir erstellen eine neue Pipeline:
+      <p>
+          <img src="Unbenannt.jpg" alt="Trulli" width="590" height="320">
+    </p>
+
+       Jetzt benötigen wir Zugriff auf das Repository:
+       <p>
+           <img src="Unbenannt2.jpg" alt="Trulli" width="400" height="250">
+           <img src="Unbenannt3.jpg" alt="Trulli" width="500" height="200">
+     </p>
+
+       Hier können wir einen Code aus unserem Repository auswählen und das Deployment launchen.
+
+       Ausgeführte Pipelines findet man unter Pipelines:
+       <p>
+           <img src="Unbenannt4.jpg" alt="Trulli" width="500" height="250">
+     </p>
+
+       In meinem Beispiel habe ich es sowohl mit einem Docker Container als auch mit einer regulären ASP.NET-App versucht.
+       Allerdings hat nur zweiteres funktioniert.
+
+       <p>
+           <img src="Unbenannt5.png" alt="Trulli" width="600" height="350">
+     </p>
+       Die Ausführung der ASP.NET-App war erfolgreich.
+       Die Pipeline dient jetzt als Plattform zum kontinuierlichen Deployment.
+       Die ASP.net App kann man jetzt nach Belieben über VisualStudio anpassen und wenn der Code in das Repository commited wird, kann er automatisch von der Pipeline ausgeführt werden.
+     </p>
+     </div>
+
+
+
+  <div class="card">
+  <h3><a id="subtopic5">Conclusion</a></h3>
+  <p>
+    <h4> Vorteile von ASP.NET </h4>
+    Auf Produktbasis es sicherlich sinnvoll auf ASP.NET zu setzen, da man durch die Nutzung von Werkzeugen wie Visual Studio, schneller entwickeln kann und dadurch Zeit und dadurch auch Kosten spart. Auch wenn es kurzfristig teurer in der Anschaffung ist.
+    <h4> Nachteile von ASP.NET </h4>
+    Allerdings kommt diese Performance zu einem Preis:  ASP.NET benötigt weitaus mehr Webserver-Ressourcen als PHP oder andere Sprachen, so dass es entweder bessere Server oder eine größere Anzahl von ihnen benötigt.
+
+    Bei einer extrem hohen Nachfrage und Auslastung (wie sie z.B. Unternehmen wie Facebook, Google erleben) würden Kosten möglicherweise exponentiell steigen.
+
+   </p>
+   <p>
+     <h4> Docker als Lösung </h4>
+    Hierbei könnte eine orchestrierte "Landschaft" von Docker-Containern eine kostengünstigere, effizientere Alternative bieten.
+  </p>
+    <p>
+        <img src="azure-kubernettes.png" alt="Trulli" width="600" height="350">
+  </p>
+    <p>
+    Diese Container können sowohl Programm-Code, als auch Datenbanken und Server-Applikationen enthalten.
+    </p>
+
+    <p>
+    In der Theorie funktioniert der Deployment-Ablauf über die Pipeline in die Azure-Cloud genau wie in dem gegebenen Beispiel,
+    nur dass die ausführende Agent-Software entsprechend mit Docker Plugins konfiguriert werden muss.
+  </p>
+    
+
+   Falls mehr Interesse besteht, kann man sich
+<a href="https://docs.microsoft.com/de-de/learn/modules/intro-to-containers/6-deploy-docker-image-to-container-instance" target="_blank" >hier</a>
+  über Konfiguration und Ausführung von Docker über eine Pipeline informieren.
+
+
+   </p>
+
+  </p>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="column right">
+  </div>
+
+</div>
+
+
+
+</div>
+<div class="footer">
+  <p>2022</p>
+</div>
+<script src="Scriptsheet.js">
+
+</script>
+</body>
+</html>

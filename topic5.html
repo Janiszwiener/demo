@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+  <nav>
+    <ul>
+
+      <li><a href="home.html">Home</a></li>
+
+      <li><a href="topic1.html">Vorlesung 1</a>
+      <ul>
+        <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+        <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+        <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+        <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic2.html">Vorlesung 2</a>
+          <ul>
+            <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+            <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+            <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+          </ul>
+      </li>
+
+      <li><a href="topic3.html">Vorlesung 3</a>
+      <ul>
+        <li><a href="topic3.html#subtopic1">Einführung</a></li>
+        <li><a href="topic3.html#subtopic2">Threads</a></li>
+        <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic4.html">Vorlesung 4</a>
+      <ul>
+        <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+        <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+        <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+        <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+      </ul>
+      </li>
+
+      <li><a class="active" href="topic5.html">Vorlesung 5</a>
+      <ul>
+        <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+        <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+        <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic6.html">Vorlesung 6</a>
+      <ul>
+        <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+        <li><a href="topic6.html#subtopic2">PWA</a></li>
+        <li><a href="topic6.html#subtopic3">React</a></li>
+        <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+        <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+        <li><a href="topic6.html#subtopic6">Promises </a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+      <ul>
+        <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+
+
+
+<div class="row">
+
+
+
+<div class="content">
+  <div class="column middle">
+    <div class="card">
+    <h2>Vorlesung 5</h2>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Tomcat Server</a></h3>
+    <p>
+      Am Anfang haben wir ganz lange über einen Klausur Termin diskutiert...
+    </p>
+      <p>
+      Die Idee der fünften Vorlesung war einen Tomcat Server zu starten.
+      Ein (Apache) Tomcat ist ein Open-Source-Webserver und Webcontainer,
+      der die Spezifikation Jakarta Servlets (früher Java Servlets) und Jakarta Server Pages (JSP, früher JavaServer Pages) implementiert,
+      wodurch in Java geschriebene Webanwendungen auf Servlet- oder JSP-Basis ausgeführt werden können .
+    </p>
+    <p>
+        <img src="tomcatlol.jpeg" alt="Trulli" width="350" height="270" >
+    </p>
+    <p>
+      Klingt ja nicht sehr kompliziert...
+        Was könnte da nur schief gehen?
+
+      </p>
+      <p>
+        <img src="TomcatKatze.png" alt="Trulli" width="350" height="270" >
+
+  </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Get und Post</a></h3>
+
+      <p>
+      Neben der Übungsaufgabe haben wir uns auch mit ein wenig Theorie auseinandergesetzt.
+      Die Kommunikation zwischen Server und Client haben wir uns schon in vorherigen Vorlesungen angeschaut.
+      Der Client schickt eine HTTP Anfrage an den Server, der Server schickt eine HTTP Datei wieder zurück.
+      Die am häufigsten verwendeten Methoden sind hier GET und POST.
+      Diese gehen beide vom Client aus, haben aber leicht unterschiedliche Funktionen:
+    </p>
+    <p>
+        <img src="Post.png" alt="Trulli" width="400" height="200" >
+        <img src="Get.png" alt="Trulli" width="400" height="200" >
+  </p>
+    <p>
+      Das Problem hinter diesen HTTP Anfragen,
+      vor allem bei der Post Anfrage ist, dass sehr viele Informationen über den Header entnommen werden können,
+      so sind Abhör-Attacken sehr einfach.
+      Außerdem können solche HTTP Anfragen sehr lang werden.
+  </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic2">Tomcat Development & Hosting</a></h3>
+    <p>
+      Der Java-Code wird in einem Ordner Verzeichnis gespeichert.
+
+      <code><pre>
+      Projekt a
+	       - SRC
+		     - Kap01.java
+	       - Classes
+		     - Kap01.class
+	       - etc
+		     - web.xml
+      </code></pre>
+
+    </p>
+    <p>
+      Dann wird der Code ausgeführt und eine neue Klasse erstellt, die in einem Deployment Verzeichnis gespeichert wird:
+      <code><pre>
+        tomcat5 - webapps - Kap01 - WEB-INF - classes
+      </code></pre>
+    </p>
+    <p>
+        <img src="tomcat77.jpg" alt="Trulli" width="950" height="650" class="center">
+
+    </p>
+
+    <p>
+      Durch das Kompilieren der Kap01.java-Datei wird eine Java-Class Kap01Servlcet.class erstellt,
+      die in das WEB-INF-Classes Verzeichnis des Tomcat kopiert werden muss.
+    </p>
+    <p>
+
+      Nach dem Starten des TomCats aus dem TomCat Verzeichnis lässt sich der Inhalt der HTML Datei über "http://localhost:8080/Kap01/Serv1" aufrufen und der in das Java-File eingetrage HTML Code wird ausgegegeben.
+      <p>
+          <img src="jzsayshello.png" alt="Trulli" width="1000" height="150" class="center">
+
+      </p>
+
+    </p>
+
+
+    </div>
+
+<div class="card">
+<h3><a id="subtopic3">Potenzielle Probleme </a></h3>
+<p>
+  Hier eine Liste mit möglichen Problemen die aufgetreten sind:
+  <ol>
+      <li>   Oracle Datenbanken blockierten den eigenen 8080-Port </li>
+      <li>   Dateien richtig einzuordnen, am besten über das CLI erfordert ein sehr hohes Maß an Konzentration. </li>
+      <li>   Die richtige Syntax zu verwenden ist schwierig </li>
+      <li>   Wenn Server im Hintergrund weiterlaufen, benötigt der PC einige Ressourcen und der Lüfter hat eine Menge Arbeit. </li>
+  </li>
+  </ol>
+</p>
+<div class="card">
+<h3><a id="subtopic4"> CODE </a></h3>
+<p>
+  Hier noch einmal der Code der Übungen
+
+  <h4> Kap01Servlet.javaDatei </h4>
+
+  <pre> <code>
+
+    &ltweb-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                     http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+ version="4.0">
+
+   &ltdisplay-name>Kapitel 1 Servlet Test&lt/display-name>
+   &ltdescription>
+       This is a simple web application with a source code organization
+       based on the recommendations of the Application Developer's Guide.
+   &lt/description>
+
+  &ltservlet>
+       &ltservlet-name>Kapitel 1 Servlet&lt/servlet-name>
+       &ltservlet-class>Kap01Servlet&lt/servlet-class>
+   &lt/servlet>
+
+   &ltservlet-mapping>
+       &ltservlet-name>Kapitel 1 Servlet&lt/servlet-name>
+       &lturl-pattern>/Serv1&lt/url-pattern>
+   &lt/servlet-mapping>
+
+&lt/web-app>
+
+</code> </pre>
+
+  <h4> web.xml Datei</h4>
+<p>
+
+  <pre> <code>
+    import javax.servlet.*;
+  import javax.servlet.http.*;
+  import java.io.*;
+
+  public class Kap01Servlet extends HttpServlet {
+   public void doGet (HttpServletRequest request, HttpServletResponse response)
+       throws IOException {
+
+       PrintWriter out = response.getWriter();
+       java.util.Date today = new java.util.Date();
+       out.println("&lthtml>" +  "&ltbody>" + "&lth1 align=center>VKBF Kapitel1 Servlet &lt/h1>" + "&ltbr>" + today + "&lt/body>" + "&lt/html>");
+     }
+  }
+</pre></code>
+
+</p>
+
+</p>
+
+
+
+
+</div>
+
+<div class="footer">
+  <p>2022</p>
+</div>
+<script src="Scriptsheet.js">
+
+</script>
+</body>
+</html>

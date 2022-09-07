@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+  <nav>
+    <ul>
+
+      <li><a href="home.html">Home</a></li>
+
+      <li><a  href="topic1.html">Vorlesung 1</a>
+      <ul>
+        <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+        <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+        <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+        <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+      </ul>
+      </li>
+
+      <li><a class="active" href="topic2.html">Vorlesung 2</a>
+          <ul>
+            <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+            <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+            <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+          </ul>
+      </li>
+
+      <li><a href="topic3.html">Vorlesung 3</a>
+      <ul>
+        <li><a href="topic3.html#subtopic1">Einführung</a></li>
+        <li><a href="topic3.html#subtopic2">Threads</a></li>
+        <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic4.html">Vorlesung 4</a>
+      <ul>
+        <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+        <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+        <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+        <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic5.html">Vorlesung 5</a>
+      <ul>
+        <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+        <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+        <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic6.html">Vorlesung 6</a>
+      <ul>
+        <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+        <li><a href="topic6.html#subtopic2">PWA</a></li>
+        <li><a href="topic6.html#subtopic3">React</a></li>
+        <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+        <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+        <li><a href="topic6.html#subtopic6">Promises </a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+      <ul>
+        <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+
+
+<div class="content">
+  <div class="column middle">
+    <div class="card">
+      <h2>Vorlesung 2</h2>
+    </div>
+
+    <div class="card">
+      <h3><a id="subtopic1">Lesen und Schreiben von Textdateien </a></h3>
+
+    <p>
+      In vielen Fällen können Daten nicht als serialisiertes Objekt in Java gespeichert werden, manchmal braucht man einfach eine gute alte Textdatei.
+      Zu diesem Zweck kann Java Textdateien schreiben. Dies funktioniert ähnlich wie das Schreiben eines Objekts:
+    </p>
+    <p>
+      <code><pre>
+      objectOutputStream.writeObject(einObjekt);
+      fileWriter.write("Test");
+      </code></pre>
+
+    </p>
+
+    <p>
+      Wie bei einem Objektstrom benötigen wir auch hier einen Try-Catch-Block zur Implementierung, da immer eine IOExeption ausgelöst werden kann.
+      Für einen Dateistrom verwenden wir die Klasse FileWriter aus der java.io-Bibliothek.
+    </p>
+
+      <p>
+        <code><pre>
+        try {
+   FileWriter writer = new FileWriter("test.txt");
+   writer.write("Pure excellence!");
+   writer.close();
+            }
+            catch (IOException ex){
+              ex.printStackTrace();
+            }
+          </code><pre>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h3><a id="subtopic2">Java.io.File & Reader/Writer</a></h3>
+    <p>
+      <h4> Java.io.File </h4>
+      Als nächstes haben wir uns die Klasse Java.IO.File näher angesehen. Diese repräsentiert jedoch nicht den Inhalt der verwendeten Datei, sondern nur den Pfad zu ihr.
+      File-Objekte können in Java wie String-Objekte verwendet werden.
+      Dateien können erstellt, beschrieben und auch gelesen werden. Mit Funktionen wie dir.mkdir kann die Datei in ein Verzeichnis geschrieben werden.
+    </p>
+    <p>
+      <h4> Reader Writer </h4>
+      Um jetzt mit dem File Objekt irgendetwas anfangen zu können haben wir uns den File Reader und Writer angeschaut. Dieser schreibt Zeilenweise etwas in eine Datei, je nachdem was man braucht.
+      Um zu verstehen wie diese beiden Klassen angewandt werden, haben wir ein paar Zeilen Code geschrieben, die aus einer Datei liest, und den Inhalt dann In eine andere Datei wieder reinschreibt.
+      Damit dies ohne Probleme abläuft, braucht man einen Puffer. Dieser Puffer sorgt dafür, dass die gelesenen Zeilen zwischengespeichert werden, sodass sie dann aufgerufen werden können und in eine andere Datei geschrieben werden können.
+      Hier der Code der Übung:
+
+<pre> <code>
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class texteLesen {
+   public static void main(String[] args){
+
+       try {
+           BufferedReader reader = new BufferedReader(new FileReader("name.txt"));
+           BufferedWriter writer = new BufferedWriter(new FileWriter("name_kopie.txt"));
+
+           String text;
+
+           while((text = reader.readLine()) != null){
+               writer.write(text);
+               writer.newLine();
+
+           }
+           reader.close();
+           writer.close();
+
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+
+       try {
+           FileWriter writer = new FileWriter("test.txt");
+           writer.write("Pure Excellence!!!!");
+           writer.close();
+
+       }catch (IOException ex){
+           ex.printStackTrace();
+       }
+   }
+}
+</pre> </code>
+Die Übung hat eine Weile gedauert, aber dann konnten wir uns schnell mit Client-Servern beschäftigen.
+    </p>
+
+    </div>
+
+    <div class="card">
+      <h3><a id="subtopic3"> Netzwerke - Server/Client</a></h3>
+
+    <p>
+      <h4> Netzwerke </h4>
+      Im zweiten Teil der Vorlesung haben wir uns von der Client seitigen Programmierung entfernt und haben uns mehr mit den Servern auseinandergesetzt.
+      Zum Aufbau einer Verbindung zwischen einem Client und Server muss der Client den Server kennen und der Server muss alle Clients kennen, die sich mit ihm verbinden.
+      Hierzu werden TCP/IP Sockets verwendet. Diese sorgen dafür, dass eine Verbindung hergestellt wird.
+      Die Verbindungen zwischen Clients uns Servers erfolgt mit der Übergabe der IP Adresse und der Port Nummer.
+      Diese müssen beide Angegeben sein um eine Verbindung zu erstellen.
+      Ports sind wie Türen die aus einem Rechner in die offene Welt leiten.
+      Jeder Computer hat 2^16 Ports und kann sich somit mit vielen Servern, Diensten gleichzeitig verbinden.
+      Für wichtige Dienste sind zum Beispiel Ports 0-1023 reserviert.
+
+      Ports werden unterschieden zwischen internen und externen Ports unterschieden,
+      hier entscheidet der Router (z.b eine FritzBox!) welcher Port wohin geht.
+      Dies nennt sich Port Mapping.
+      <p>
+        <img src="PortmappNAPT-en.png" alt="Trulli" width="700" height="370" class="center">
+    </p>
+
+    </p>
+
+    <p>
+      <h4><a> Client Server Übung </a></h4>
+      Um alles was wir in der Vorlesung gelernt haben anzuwenden,
+      haben wir mithilfe der Klasse ServerSocket und mit den Buffered Readern und Writern einen Client und Server programmiert.
+        </p>
+          <p>
+      Hierzu haben wir 2 Klassen aufgebaut, den Client und den Server. in der los() Methode verbindet sich der Client mit dem Server auf Port 4242.
+      Wenn eine Verbindung aufgebaut ist, schickt der Server dem Client eine Liste, die Tipps des Tages, ein Array von Tipps ausgibt.
+    </p>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>2022</p>
+</div>
+
+<script src="lerntagebuchJS.js">
+</script>
+
+</body>
+</html>

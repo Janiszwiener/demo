@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+  <nav>
+    <ul>
+
+      <li><a href="home.html">Home</a></li>
+
+      <li><a  href="topic1.html">Vorlesung 1</a>
+      <ul>
+        <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+        <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+        <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+        <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic2.html">Vorlesung 2</a>
+          <ul>
+            <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+            <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+            <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+          </ul>
+      </li>
+
+      <li><a class="active" href="topic3.html">Vorlesung 3</a>
+      <ul>
+        <li><a href="topic3.html#subtopic1">Einführung</a></li>
+        <li><a href="topic3.html#subtopic2">Threads</a></li>
+        <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic4.html">Vorlesung 4</a>
+      <ul>
+        <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+        <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+        <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+        <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic5.html">Vorlesung 5</a>
+      <ul>
+        <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+        <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+        <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic6.html">Vorlesung 6</a>
+      <ul>
+        <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+        <li><a href="topic6.html#subtopic2">PWA</a></li>
+        <li><a href="topic6.html#subtopic3">React</a></li>
+        <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+        <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+        <li><a href="topic6.html#subtopic6">Promises </a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+      <ul>
+        <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+        <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+      </ul>
+      </li>
+
+      <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+
+
+
+
+<div class="content">
+  <div class="column middle">
+    <div class="card">
+    <h2>Vorlesung 3</h2>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Einführung</a></h3>
+    <p>
+      Am Anfang der Vorlesung haben wir uns nochmal mit den Sockets auseinander gesetzt.
+      Sockets bilden eine plattformunabhängige standardisierte Schnittstelle (API) zwischen der Netzwerkprotokoll-Implementierung des Betriebssystems und der eigentlichen Anwendungssoftware.
+      Hierfür haben wir uns ein paar Methoden durchgelesen und dessen Funktion besprochen.
+
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic2">Threads</a></h3>
+    <p>
+      Im nächsten Teil der Vorlesung haben wir uns mit Threads in Java beschäftigt. Wir haben sie bereits in unserem Programmiermodul behandelt,
+      aber leider ist nicht viel davon hängen geblieben.
+      Threads helfen dabei, mehrere Aufgaben gleichzeitig auszuführen.
+    </p>
+        <p>
+          <img src="multithread.png" alt="Trulli" width="800" height="400" class="center">
+      </p>
+      <p>
+      Multithreading ist der Begriff, der hier in der Java-Programmierung verwendet wird, um mehrere Abfragen zu bearbeiten.
+      Threads sind in Java Objekte und können mehrere Zustände haben.
+      Dazu gehören die Zustände new, running, running und der Zustand blocked.
+      In dem Zustand running will jeder Thread sein. Mit der Methode thread.start wird ein Thread lauffähig gemacht,
+      so dass er für den Übergang in den Zustand running ausgewählt werden kann. Der Zustand blocked zeigt an, dass der Thread vorübergehend nicht ausführbar ist.
+
+
+    </p>
+  </div>
+
+    <div class="card">
+    <h3><a id="subtopic3">ChatServer</a></h3>
+    <p>
+      Mit unserem aufgefrischten Wissen über Threads und dem erlernten Wissen über Sockets programmierten wir einen Chat-Server.
+      Dieses Chatprogramm baut ein Netzwerk auf, in dem Nachrichten über gepufferte Reader und Writer ausgetauscht werden können.
+      Aufgabe war es, die folgenden Funktionen zu implementieren:
+    </p>
+    <p>
+      - Text mit Enter-Taste senden (Programm KeyListener)
+      - Eigenen Namen vor ausgehende Nachrichten schreiben "Janis: ".
+      - UTF-8 Zeichentabelle verwenden oder kodieren, dass Sonderzeichen korrekt sind.
+    </p>
+    <p>
+    Leider gab es einige Probleme mit dem KeyListener.
+    Der erste Ansatz war, ihn in einer anderen Klasse zu implementieren.
+    ber der KeyListener wollte einfach nicht zuhören und funktionierte nicht.
+    Die Variante, die dann funktionierte, war die Verwendung eines KeyAdapters.
+    </p>
+
+    <p>
+      <img src="Bild 09.06.22 um 09.49CHAT.jpg" alt="Trulli" width="800" height="650" class="center">
+  </p>
+  <p>
+    Ein großer Nachteil des Servers war natürlich, dass jeder User seinen Namen einfach ändern konnte. Somit war Identitätsdiebstahl ein häufig vorkommendes Phänomen.
+</p>
+
+  <p>
+Hier noch der Code für die Aufgabe:
+  </p>
+
+<pre> <code>
+  package drittevorlesung3;
+
+  import java.awt.event.ActionEvent;
+  import java.awt.event.ActionListener;
+  import java.io.BufferedReader;
+  import java.io.IOException;
+  import java.io.InputStreamReader;
+  import java.io.PrintWriter;
+  import java.net.Socket;
+  import javax.swing.*;
+  import java.awt.*;
+  import java.awt.event.KeyEvent;
+  import java.awt.event.KeyListener;
+
+  public class EinfacherChatClientA {
+      JTextArea txtEingehend;
+      JTextField txtAusgehend;
+      JTextField txtUsername;
+      BufferedReader reader;
+      PrintWriter writer;
+      Socket sock;
+
+      public static void main(String[] args) {
+          EinfacherChatClientA client = new EinfacherChatClientA();
+          client.los();
+      }
+
+      public void los() {
+          // Frame
+          JFrame frame = new JFrame("Lächerlich einfacher Chat-Client");
+          JPanel hauptPanel = new JPanel();
+
+          // Textfeld für eingehende Kommunikation
+          txtEingehend = new JTextArea(15,20);
+          txtEingehend.setLineWrap(true);
+          txtEingehend.setWrapStyleWord(true);
+          txtEingehend.setEditable(false);
+          JScrollPane fScroller = new JScrollPane(txtEingehend);
+          fScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+          fScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+          // Textfeld für ausgehende Kommunikation und Label
+          txtAusgehend = new JTextField(20);
+          JLabel lblUsername = new JLabel("Username: ");
+          txtUsername = new JTextField(20);
+
+          // Senden Button
+          JButton btnSenden = new JButton("Senden");
+          btnSenden.addActionListener(new SendenButtonListener());
+
+          // Elemente zum Panel hinzufügen
+          hauptPanel.add(lblUsername);
+          hauptPanel.add(txtUsername);
+          hauptPanel.add(fScroller);
+          hauptPanel.add(txtAusgehend);
+          hauptPanel.add(btnSenden);
+
+          // Netzwerkverbindung bereit machen
+          netzwerkEinrichten();
+
+          // Neuen Thread starten
+          Thread readerThread = new Thread(new EingehendReader());
+          readerThread.start();
+
+          frame.getContentPane().add(BorderLayout.CENTER, hauptPanel);
+          frame.setSize(400,500);
+          frame.setVisible(true);
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+          KeyPressedA pressed = new KeyPressedA();
+          frame.addKeyListener(pressed);
+      }
+
+      private void netzwerkEinrichten(){
+          try {
+              sock = new Socket("192.168.40.49", 5040);
+              InputStreamReader streamReader = new InputStreamReader(sock.getInputStream());
+              reader = new BufferedReader(streamReader);
+              writer = new PrintWriter(sock.getOutputStream());
+              System.out.println("Netzwerkverbindung steht");
+          } catch(IOException ex){
+              ex.printStackTrace();
+              System.out.println("Fehler bei der Netzwerkverbindung");
+          }
+      }
+
+      class SendenButtonListener implements ActionListener {
+
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              try {
+                  writer.println(txtUsername.getText() + ": " + txtAusgehend.getText());
+                  writer.flush();
+              } catch(Exception ex){
+                  ex.printStackTrace();
+                  System.out.println("Fehler beim Senden");
+              }
+              txtAusgehend.setText("");
+              txtAusgehend.requestFocus();
+          }
+      }
+      class KeyPressedA implements KeyListener {
+
+          @Override
+          public void keyTyped(KeyEvent e) {
+
+          }
+
+          public void keyPressed(KeyEvent e)
+      {
+          if(e.getKeyCode() == KeyEvent.VK_ENTER)
+              System.exit(0);
+          try {
+              writer.println(txtUsername.getText() + ": " + txtAusgehend.getText());
+              writer.flush();
+          } catch(Exception ex){
+              ex.printStackTrace();
+              System.out.println("Fehler beim Senden");
+          }
+          txtAusgehend.setText("");
+          txtAusgehend.requestFocus();
+      }
+
+          @Override
+          public void keyReleased(KeyEvent e) {
+
+          }
+      }
+
+
+
+
+      class EingehendReader implements Runnable{
+          public void run() {
+              String nachricht;
+              try{
+                  while ((nachricht = reader.readLine()) != null) {
+                      System.out.println("gelesen: " + nachricht);
+                      txtEingehend.append(nachricht + "\n");
+                  }
+              } catch(Exception ex) {
+                  ex.printStackTrace();
+              }
+          }
+      }
+  }
+</pre> </code>
+    <p>
+Und noch der Code für die textelesen Datei:
+    </p>
+  <pre> <code>
+    import java.io.BufferedReader;
+    import java.io.BufferedWriter;
+    import java.io.FileReader;
+    import java.io.FileWriter;
+    import java.io.IOException;
+
+    public class texteLesen {
+        public static void main(String[] args){
+
+            try {
+
+                BufferedReader reader = new BufferedReader(new FileReader("name.txt"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("name_dublikat.txt"));
+
+                String text;
+
+                while((text = reader.readLine()) != null){
+
+                    writer.write(text);
+                    writer.newLine();
+                }
+                reader.close();
+                writer.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+  </pre> </code>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div
+  class="column right">
+  </div>
+
+  </div>
+
+
+
+
+  <div class="footer">
+  <p>2022</p>
+  </div>
+
+  <script src="Scriptsheet.js">
+
+  </script>
+  </body>
+  </html>

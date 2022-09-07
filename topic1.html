@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verteilte Systeme - Janis Zwiener</title>
+  <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Verteilte Systeme</h1>
+<h2>Janis Zwiener</h2>
+</div>
+
+<div class="navbar" id="navbar">
+<nav>
+  <ul>
+
+    <li><a href="home.html">Home</a></li>
+
+    <li><a class="active" href="topic1.html">Vorlesung 1</a>
+    <ul>
+      <li><a href="topic1.html#subtopic1">Einführung/Bridges & Swichtes </a></li>
+      <li><a href="topic1.html#subtopic2">Tiefseekabel</a></li>
+      <li><a href="topic1.html#subtopic3">Software Architektur von dynamischen Websites</a></li>
+      <li><a href="topic1.html#subtopic4">Java Streams</a></li>
+    </ul>
+    </li>
+
+    <li><a href="topic2.html">Vorlesung 2</a>
+        <ul>
+          <li><a href="topic2.html#subtopic1">Lesen und schreiben von Textdateien</a></li>
+          <li><a href="topic2.html#subtopic2">Java.io.File & Reader/Writer</a></li>
+          <li><a href="topic2.html#subtopic3">Netzwerke - Server/Client</a></li>
+        </ul>
+    </li>
+
+    <li><a href="topic3.html">Vorlesung 3</a>
+    <ul>
+      <li><a href="topic3.html#subtopic1">Einführung</a></li>
+      <li><a href="topic3.html#subtopic2">Threads</a></li>
+      <li><a href="topic3.html#subtopic3">ChatServer</a></li>
+    </ul>
+    </li>
+
+    <li><a href="topic4.html">Vorlesung 4</a>
+    <ul>
+      <li><a href="topic4.html#subtopic1">Thread Scheduler</a></li>
+      <li><a href="topic4.html#subtopic2">Nebenläufigkeitsprobleme</li>
+      <li><a href="topic4.html#subtopic3">Verlorene Aktualisierung</a></li>
+      <li><a href="topic4.html#subtopic4">Erzeuger/Verbraucher-Problem:</a></li>
+    </ul>
+    </li>
+
+    <li><a href="topic5.html">Vorlesung 5</a>
+    <ul>
+      <li><a href="topic5.html#subtopic1">Tomcat Server </a></li>
+      <li><a href="topic5.html#subtopic2">Tomcat Development & Deployment</a></li>
+      <li><a href="topic5.html#subtopic3">Potenzielle Probleme</a></li>
+    </ul>
+    </li>
+
+    <li><a href="topic6.html">Vorlesung 6</a>
+    <ul>
+      <li><a href="topic6.html#subtopic1">Apps!!!</a></li>
+      <li><a href="topic6.html#subtopic2">PWA</a></li>
+      <li><a href="topic6.html#subtopic3">React</a></li>
+      <li><a href="topic6.html#subtopic4">JavaScript</a></li>
+      <li><a href="topic6.html#subtopic5">Asynchrone Programmierung</a></li>
+      <li><a href="topic6.html#subtopic6">Promises </a></li>
+    </ul>
+    </li>
+
+    <li><a href="topic7Schwerpunkt.html">Schwerpunkt-Thema</a>
+    <ul>
+      <li><a href="topic7Schwerpunkt.html#subtopic1">Warum Webapps? </a></li>
+      <li><a href="topic7Schwerpunkt.html#subtopic2">Progressives Deployment</a></li>
+      <li><a href="topic7Schwerpunkt.html#subtopic3">Beispiel</a></li>
+      <li><a href="topic7Schwerpunkt.html#subtopic3">Conclusion</a></li>
+    </ul>
+    </li>
+
+    <li><a href="topic8Reflexion.html">Reflexion</a></li>
+
+  </ul>
+</nav>
+</div>
+
+<div class="content">
+
+    <div class="card">
+    <h2>Vorlesung 1</h2>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic1">Einführung</a></h3>
+    <p>
+      Zu Beginn der Vorlesung haben wir uns mit grundlegenden Netzwerkthemen beschäftigt.
+      Wir haben uns einige wichtige technische Meilensteine in der Vergangenheit angesehen.
+      Zunächst war das Internet nur intern über ein P2P-Netzwerk verfügbar, aus dem sich dann das heutige Internet entwickelte.
+      Fun Fact: Das heutige Datenbanksymbol stellt einen Stapel von Speicherplatten dar.
+      <p>
+          <img src="DB Stapel.png" alt="Trulli" width="100" height="100">
+    </p>
+    Früher erfolgte die Verbindung zum Internet über ein Modem, das sich über Telefonleitungen einwählte.
+    Zu Hause und in Büros wurden die ersten LAN-Netze mit Ethernet aufgebaut, genau wie heute,
+    aber mit einer BUS-Topologie mit Transceivern, bei der viele Kollisionen auftraten.
+    </p>
+    </div>
+
+
+    <div class="card">
+    <h3><a id="subtopic1">Bridges und Switches</a></h3>
+    <p>
+      Heutzutage verfügt jedes Netzwerk über mehrere Switches, um Geräte mit einem LAN zu verbinden.
+      Der Vorgänger dieser Switches ist die Bridge, die den Datenfluss filtert und sich MAC-Adressen in einer Weiterleitungstabelle merkt.
+      Die heutigen Switches erweitern das Prinzip der Bridge und führen Aspekte wie die Weiterleitung ein.
+      Switches arbeiten kollisionsfrei, da sie nur ein Gerät pro Domäne schalten, wodurch ein hoher Durchsatz möglich ist.
+      Switches speichern Pakete und leiten sie weiter, sobald die Domäne frei ist.
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic2">Tiefseekabel </a></h3>
+    <p>
+      Der letzte Teil der Einführung war ein Exkurs zum Thema Unterwasserkabel.
+      Weltweit gibt es rund 1,2 Millionen km Tiefseekabel allein für die Übertragung von Daten.
+      Anfang 2020 waren rund 406 Unterseekabel aktiv, und es werden ständig weitere verlegt.
+
+    </p>
+<img src="Tiefsee Kabel.png" alt="Trulli" width="400" height="250">
+
+<img src="aufbaukabel.jpeg" alt="Trulli" width="250" height="250">
+
+<img src="aufbau2.jpeg" alt="Trulli" width="200" height="150">
+
+    <p>
+            Ein Tiefseekabel hat im Kern mehrere Glasfasern, die für den Datentransport zuständig sind. Um die Glasfaser herum sind mehrere Schichten angeordnet, um sie zu schützen.
+            Da das Licht bei wiederholten Reflexionen seine ursprüngliche Energie nicht beibehalten kann, müssen zusätzlich zu den Kabeln alle 30 km Verstärker verlegt werden.
+            Für eine Strecke von Europa in die USA sind das eine Menge Kabel, die gewartet werden müssen.
+    </p>
+    </div>
+
+    <div class="card">
+    <h3><a id="subtopic3">Software Architektur von dynamischen Webseiten </a></h3>
+    <p>
+      Letztes Semester haben wir uns mit clientseitigen Technologien beschäftigt, dieses Semester werden wir uns mehr mit serverseitigen Technologien beschäftigen. Zur Erinnerung, hier ist die grobe Architektur eines Webservers:
+      Client-seitige Technologien sind z.B. JavaScrpit und seine Frameworks, Java-Applets und native Apps. Diese werden dann z.B. in Swift oder C programmiert. Android-Geräte verwenden JAVA als Sprache für ihre Apps. Die meisten Web-Apps generieren ihren Java-Code aus serverseitigen Skripten, die wiederum hybride Technologien darstellen.
+      Java-Applets sind eine solche Hybridtechnologie. Diese führen Java-Code auf dem Client-Endgerät aus. Applets werden kaum noch verwendet, da sie einige Sicherheitsprobleme haben. Ein Problem ist, dass man nicht erkennen kann, woher der Code kommt, und es gibt keinen Zugriff auf Dateien.
+
+    </p>
+
+    <img src="php.jpeg" alt="Trulli" width="600" height="330">
+
+    <p>
+
+      Im Gegensatz zu clientseitigen Technologien sind serverseitige Technologien für den Benutzer der Webanwendung nicht direkt sichtbar. Das Grundprinzip ist die Delegation/Weiterleitung von HTTP-Anfragen an externe Komponenten. Auf der Serverseite wird mit großer Mehrheit PHP verwendet, gefolgt von Java, Ruby für die Programmierung z.B. von Webshops.
+      Ein Einstieg in serverseitige Technologien war CGI. Das Common Gateway Interface (CGI) leitete die Entwicklung hin zu dynamischen Webseiten ein, indem es bestimmte URLs vom Webserver als Aufforderung zum Programmstart interpretierte. So werden Prozesse auf einem Server durch Eingabe der URL ausgeführt. Dies ist auch ein Hauptproblem von CGI. Durch wiederholte Aufrufe der URL werden auch wiederholt Prozesse auf dem Server gestartet. So kam es zu DDOS-Angriffen (Distributed Denial of Service).
+    </p>
+
+    <img src="server.jpeg" alt="Trulli" width="550" height="280">
+
+      <p>
+        Eine weitere Technologie, die ebenfalls dynamische Websites ermöglicht, ist PHP. PHP ist ein Akronym für Hypertext Preprocessor und ist eine serverseitige Skriptsprache. PHP ist die am weitesten verbreitete serverseitige Skriptsprache der Welt. Ein großer Vorteil von PHP ist, dass es quelloffen ist und daher ständig weiterentwickelt wird und mit den modernen Trends Schritt hält.
+        Um richtig zu verstehen, wie eine serverseitige Sprache wie PHP funktioniert, ist hier der Ablauf:
+    </p>
+    <img src="apache.png" alt="Trulli" width="550" height="280">
+
+    <ol>
+  <li>  Eingabe einer URL im Browser</li>
+  <li>    Verbindungsaufbau mit Server</li>
+  <li>  Browser sagt was er will</li>
+  <li>    Apache auf dem Server bearbeitet die Anfrage des Anwenders</li>
+  <li>  Apache ruft eine PHP Datei auf</li>
+  <li>  Das PHP Skript zieht sich Daten aus der MySQL Datenbank</li>
+  <li>  MySQL schickt die Daten ans PHP Skript</li>
+  <li>    Interpretiertes PHP Skript wird zurück an Apache gesendet</li>
+  <li>  Apache schickt dem Anwender das Ergebnis der Interpretation meistens: HTML JavaScript oder CSS</li>
+  <li> Die gewünschte Webseite taucht auf!</li>
+</ol>
+
+    <p>
+      PHP kann genau wie Java-Skript in eine HTML-Datei integriert werden.
+      Hier ist die Startmarkierung < php und die Endmarkierung >.
+
+      Wie Java ist auch PHP eine objektorientierte Sprache und hat eine ähnliche Syntax wie Java.
+      Im Gegensatz zu den Java-Applets werden Server-Applets auch heute noch verwendet und basieren weitgehend auf Java.
+      Java wird, wie bereits erwähnt, häufig für die Programmierung komplexer Webseiten verwendet.
+      Konzepte wie Vererbung, Klassen und Schnittstellen sind in Java integriert, was es sehr vielseitig macht.
+      Im Gegensatz zu Java Script verfügt Java nicht über einen Just-in-Time-Compiler, sondern kompiliert den gesamten Code, bevor er ausgeführt wird.
+    </p>
+    <img src="servlets.jpeg" alt="Trulli" width="500" height="280">
+
+    </div>
+
+    <div class="card">
+      <h3><a id="subtopic4">Java Streams</a></h3>
+      <p>
+        Bei der Entwicklung von Computerspielen ist es unerlässlich, den Spielstand auf irgendeine Weise speichern zu können, da er sonst vollständig verloren geht. Da jedoch beim Beenden eines Java-Programms alle Variablen, Objekte usw. aus dem Heap gelöscht werden, haben Sie keine andere Wahl, als wieder von vorne anzufangen. An dieser Stelle kommt das Prinzip der Serialisierung in Java ins Spiel.
+        Serialisierung ist die Umwandlung von Objekten in Java in einen Bytestrom. Dadurch kann das Objekt vom Heap in eine Datei geschrieben und diese Datei gespeichert werden. Bei der Serialisierung in Java verwendet Java Byte-Streams, daher der Name Java-Streams.
+        Es gibt eine Vielzahl von Streams in Java, die für die Serialisierung verwendet werden.
+        Im Grunde ist dies die Zusammenarbeit der Streams:
+
+      </p>
+      <img src="streams.jpeg" alt="Trulli" width="550" height="215">
+      <p>
+
+        Die Datei, die eine solche Serialisierung ausgibt, ist eine .ser-Datei. Wie Sie sehen, können Sie nicht sehr gut erkennen, was in der Datei steht. Zu diesem Zweck werden die .ser-Dateien in XML- oder JSON-Dateien umgewandelt, die dann sehr gut lesbar sind und alle Attribute eines Objekts auswerten können.
+
+        Möchte man nun einen Spielstand wiederherstellen, kann Java mit der serialisierten Datei kaum etwas anfangen, daher können Objekte mit Streams wieder deserialisiert werden. In diesem Fall werden Input-Streams anstelle von Output-Streams verwendet. Die Vorgehensweise ist die gleiche wie bei der Serialisierung, nur in umgekehrter Reihenfolge.
+        Um diese Konzepte zu vertiefen, haben wir die erste Übung bearbeitet.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><a id="subtopic4">SpielSpeicherung-Übung</a></h3>
+
+      <p>
+
+Das gerade angesprochene Phänomen sollte jetzt in der Praxis getestet werden.
+
+</p>
+  <p>
+Die Klasse SpielSpeicherungTest beinhaltet die Serialisierung und die Deserialisierung. Hier werden außerdem die Spielfiguren initialisiert und das Team erstellt.
+Hier der Code:
+
+<pre> <code>
+
+import java.io.*;
+
+public class SpielSpeicherungTest {
+ public static void main(String[] args) {
+     Spielfigur eins = new Spielfigur(50, "Elb", new String[] {"Bogen", "Schwert", "Staub"});
+     Spielfigur zwei = new Spielfigur(40, "Troll", new String[] {"bloße Hände", "Axt"});
+     Spielfigur drei = new Spielfigur(150, "gute Fee", new String[] {"Zaubersprüche", "Flügel"});
+
+     Team IMBIT = new Team("IMBIT", new Spielfigur[]{eins, zwei, drei});
+
+
+     try {
+         ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Spiel.ser"));
+         os.writeObject(IMBIT);
+         os.close();
+     } catch (IOException ex) {
+         ex.printStackTrace();
+     }
+     IMBIT = null;
+     eins = null;
+     zwei = null;
+     drei = null;
+
+
+     try {
+         ObjectInputStream is = new ObjectInputStream(new FileInputStream("Spiel.ser"));
+         Team Wiederhergestellt = (Team) is.readObject();
+         is.close();
+
+         System.out.println("Teamname: " + Wiederhergestellt.getTeamname());
+         System.out.println("Mitglieder: \n" + Wiederhergestellt.getMitglieder());
+
+     }catch(Exception ex) {
+         ex.printStackTrace();
+     }
+ }
+}
+
+</pre> </code>
+
+Die Klasse Spielfigur beinhaltet den Konstruktor für das Objekt Spielfigur und einige Getter zur Ausgabe der Attribute:
+
+<pre> <code>
+import java.io.*;
+
+public class Spielfigur implements Serializable  {
+ int staerke;
+ String typ;
+ String[] waffen;
+
+ public Spielfigur(int staerke, String typ, String[] waffen) {
+     this.staerke = staerke;
+     this.typ = typ;
+     this.waffen = waffen;
+ }
+
+ public int getStaerke() {
+     return staerke;
+ }
+
+ public String getTyp() {
+     return typ;
+ }
+
+ public String getWaffen() {
+     String waffenListe = "";
+
+     for (int i = 0; i < waffen.length; i++) {
+         waffenListe += waffen[i] + ", ";
+     }
+     return waffenListe;
+ }
+}
+</pre> </code>
+
+Die Klasse Team beinhaltet den Konstruktor eines Teams und einiger Getter zur Ausgabe von Attributen:
+
+<pre> <code>
+  import java.io.*;
+
+  public class Team implements Serializable{
+    Spielfigur[] mitglieder;
+    String teamname;
+
+    public Team(String teamname, Spielfigur[] mitglieder) {
+      this.teamname = teamname;
+      this.mitglieder = mitglieder;
+    }
+
+    public String getMitglieder() {
+      String mitgliederListe = "";
+      for (int i = 0; i < mitglieder.length; i++) {
+        mitgliederListe += (i+1) + ": ";
+        mitgliederListe += "Typ: " + mitglieder[i].getTyp() + ", ";
+        mitgliederListe += "Stärke: " + mitglieder[i].getStaerke() + ", ";
+        mitgliederListe += "Waffen: " + mitglieder[i].getWaffen() + " \n";
+      }
+      return mitgliederListe;
+    }
+
+    public String getTeamname() {
+      return teamname;
+    }
+  }
+
+</pre> </code>
+
+
+
+
+      </p>
+    </div>
+</div>
+
+
+
+</div>
+<div class="footer">
+  <p>2022</p>
+</div>
+<script src="Scriptsheet.js">
+
+</script>
+</body>
+</html>
